@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Обсуждения автора</h1>
+
+    {% if blog_list %}
+    <ul>
+
+      {% for blog in blog_list %}
+      <li>
+        <a href="http://127.0.0.1:8000/admin/catalog/blog/1/change/">{{ blog.name }}
+      </li>
+      {% endfor %}
+
+    </ul>
+
+    {% else %}
+      <p>There are no blogs.</p>
+    {% endif %}     
+    <style>
+   body {
+    background: #c7b39b url(https://s-sd.ru/images/cms/thumbs/a5b0aeaa3fa7d6e58d75710c18673bd7ec6d5f6d/fon2_1200_auto_jpg.jpg); /* Цвет фона и путь к файлу */
+    color: #66ffff; /* Цвет текста */
+   }
+    </style>  
+{% endblock %}

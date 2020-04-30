@@ -1,0 +1,38 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1><b>Здесь публикуются ваши отзывы</b></h1>
+    <ul>
+      <style>
+	    body {
+	    background: #c7b39b url(https://avatanplus.com/files/resources/original/5c013319dece116764af9d39.jpg); /* Цвет фона и путь к файлу */
+	    color: #ff6e4a; /* Цвет текста */
+   		 }
+
+      </style>
+      <img src="https://lh3.googleusercontent.com/proxy/kiISHpdLczvLvWY8Og94ENtbOzIFyiAQG1aUVo9rJf7QLlUX_UP3U9iftCE4bbKF4kROoIASlSmAv3IACxXvjcTih7KmgK2ablzBkjn7XBXn_qLxwgKdl8zOnNpsKQS1fyMRpNZd2Ob4mjNvIrGM_gibVIf-cQpOitdAmOXjnCObi14CcNscqfwXD1HiybqbuB0yykj_loa_OY4Kp_NLn5Z4uA">
+      <h1><b>Оставить отзыв</b></h1>
+      <form method="post" action=list_reviews[form.usrname]=form.username.label_tag>
+      {% csrf_token %}
+      <label><input type="..."> Текст</label>
+      <table>
+
+      <tr>
+	<td>{{ form.username.label_tag }}</td>
+	<td>{{ form.username }}</td>
+      </tr>
+
+      <tr>
+	<td>{{ form.password.label_tag }}</td>
+	<td>{{ form.password }}</td>
+      </tr>
+      </table>
+
+      <input type="submit" value="Отправить" />
+      <input type="hidden" name="next" value="{{ next }}" />
+      </form>
+      {% for i in d %}
+        <p>{i}</p>
+      {% endfor %}
+    </ul>     
+{% endblock %}

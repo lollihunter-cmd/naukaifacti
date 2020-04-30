@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Тут вы</h1>
+
+    {% if blogauthor_list %}
+    <ul>
+
+      {% for author in blogauthor_list %}
+      <li>
+        <a href="{% url 'blogs-by-author' author.pk %}">{{ author }}</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+
+    {% else %}
+      <p>There are no bloggers yet.</p>
+    {% endif %}       
+    <style>
+   body {
+    background: #c7b39b url(https://s-sd.ru/images/cms/thumbs/a5b0aeaa3fa7d6e58d75710c18673bd7ec6d5f6d/animfon_1200_auto_jpg.jpg); /* Цвет фона и путь к файлу */
+    color: #66ffff; /* Цвет текста */
+   }
+    </style>
+{% endblock %}

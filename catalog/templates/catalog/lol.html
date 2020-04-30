@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Все обсуждения</h1>
+    <img src="https://zametkinapolyah.ru/wp-content/uploads/2016/06/550825.jpg">
+    <p><li>{% for genre in bloglist %} {{ genre }} {% endfor %}<li></p><meta charset="utf-8">
+    <a href="http://127.0.0.1:8000/admin/catalog/blogcomment/add/"><big>Добавить комментарий</big></a>
+<style>
+   body {
+    background: #c7b39b url(https://f-ferma.ru/uploads/posts/2018-07/1530465009_3mkhd51.jpg); /* Цвет фона и путь к файлу */
+    color: #66ffff; /* Цвет текста */
+   }
+  </style>
+{% endblock %}

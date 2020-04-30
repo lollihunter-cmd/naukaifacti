@@ -1,0 +1,43 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Наука и Факты</h1>
+  <a href="https://vk.com/znaniya_eto_ne_skyshno"><big>Ссылка на паблик</big></a>
+  <p>Подпишись! <em>Там </em>много интересного.</p>
+  <form action="/team_name_url/" method="post">
+        <img src="https://satsis.info/uploads/posts/2017-02/1487525535_www.satsis.info__nauka.png">
+        <img src="https://habrastorage.org/files/4b1/e8c/bba/4b1e8cbbaee34306bc67f1db87100056.png">
+  </form>
+
+<h2>Статистика</h2>
+
+  <p>Чем богаты:</p>
+  <style>
+   body {
+    background: #c7b39b url(https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-light-effect-line-science-fiction-poster-background-intelligent-image_22701.jpg); /* Цвет фона и путь к файлу */
+    color: #66ffff; /* Цвет текста */
+   }
+  </style>
+  <img src="https://sun9-45.userapi.com/c853524/v853524862/20c6c5/Kjr3FOr0KpQ.jpg">
+  <img src="https://www.spmi.ru/sites/default/files/styles/600x200/public/2020-03/coronavirus-1579982220138_v2_1920x1080.jpg?itok=CmosbvGr">
+  <ul>
+    <li><big>Подписчики:</strong> {{ num_books }}</big></li>
+    <li><big>Постов:</strong> {{ num_instances }}</big></li>
+    <li><big>Основатель:</strong> {{ num_instances_available }}</big></li>
+    <a href="https://vk.com/no_wayend"><big>Его страничка</big></a>
+    <li><big>ОТЗЫВЫ:</strong> 0</big></li>
+  </ul>
+  <p><big>Ты уже посещал эту страничку,  раз:{{ num_visits }}{% if num_visits == 1 %} раз{% else %} {% endif %}</big></p>
+  {% if case_list %}
+    <ul>
+    {% for case in case_list %}
+        <img src="{{ MEDIA_URL }}{{ case.case_preview.url }}"/>
+        <li>{{ case.case_name }}</li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p></p>
+  {% endif %}  
+
+{% endblock %}
+

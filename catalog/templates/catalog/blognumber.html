@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Обсуждения автора</h1>
+
+      {% for blog in allcoments %}
+      <li>
+        <p>{{ blog }}</p>
+      </li>
+      {% endfor %}
+
+    </ul>       
+{% endblock %}
